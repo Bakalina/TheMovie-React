@@ -1,0 +1,17 @@
+.rateStyle {
+    color: white;
+    font-weight: bold;
+    background: black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    transform: translate(10px, -20px);
+}
+
+.circleBlock  {
+    transform: translateY(1px);
+}
+
+.circleValue {
+    transform: translate(10px, -34px);
+}
