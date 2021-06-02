@@ -1,6 +1,11 @@
-import React, { Component } from 'react'
-import { Container, Row, Col } from 'react-bootstrap';
-import { Movies } from '../components/Movies';
+import React, {Component} from 'react'
+import {Container, Row, Col} from 'react-bootstrap';
+import {Movies} from '../components/Movies';
+import PaginationPage from "../Pagination/Pagination";
+
+
+
+
 
 export default class HomePage extends Component {
     constructor(props) {
@@ -18,15 +23,18 @@ export default class HomePage extends Component {
             }));
     }
 
+
     render() {
         return (
             <Container>
                 <Row>
                     <Col>
-                        <Movies data={this.state.movies} />
+                        <PaginationPage/>
+                        <Movies data={this.state.movies}/>
                     </Col>
                 </Row>
             </Container>
+
         )
     }
 }

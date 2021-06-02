@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 
 export const Movies = ({ data }) => {
     const moviesList = data.map(movie => (
-        <Card key={movie.id}>
+        <Card key={movie.id} >
             <Card.Img variant="top" src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`}></Card.Img>
             <Rating rate={movie.vote_average * 10} />
             <Card.Body>
