@@ -4,9 +4,6 @@ import {Movies} from '../components/Movies';
 import PaginationPage from "../Pagination/Pagination";
 
 
-
-
-
 export default class HomePage extends Component {
     constructor(props) {
         super(props);
@@ -15,13 +12,26 @@ export default class HomePage extends Component {
         };
     }
 
+
     componentDidMount() {
-        fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=b3eddc3e1c353736590c8f4251c8afca')
+        fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=b3eddc3e1c353736590c8f4251c8afca`)
             .then(res => res.json())
             .then(response => this.setState({
                 movies: response.results
             }));
     }
+
+    btn = () => {
+        fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=b3eddc3e1c353736590c8f4251c8afca`)
+            .then(res => res.json())
+            .then(response => this.setState({
+                movies: response.results
+            }));
+
+
+    }
+
+
 
 
     render() {
@@ -34,7 +44,6 @@ export default class HomePage extends Component {
                     </Col>
                 </Row>
             </Container>
-
         )
     }
 }
