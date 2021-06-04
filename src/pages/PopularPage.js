@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Container, Row, Col} from 'react-bootstrap';
 import {Movies} from '../components/Movies';
+import PaginationPage from "../Pagination/Pagination";
 
 
 export default class HomePage extends Component {
