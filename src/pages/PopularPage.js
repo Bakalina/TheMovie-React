@@ -14,7 +14,7 @@ export default class HomePage extends Component {
     }
 
 
-    apiFetchMovies = () => {
+    getMovies = () => {
         fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=b3eddc3e1c353736590c8f4251c8afca&page=${this.state.valBtn}`)
             .then(res => res.json())
             .then(response => this.setState({
@@ -24,12 +24,12 @@ export default class HomePage extends Component {
 
 
     componentDidMount() {
-        this.apiFetchMovies()
+        this.getMovies()
     }
 
 
     componentDidUpdate() {
-        this.apiFetchMovies()
+        this.getMovies()
     }
 
     clickPage = (e) => {
