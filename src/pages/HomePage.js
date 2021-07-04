@@ -12,13 +12,6 @@ export default class HomePage extends Component {
         };
     }
 
-    // componentDidMount() {
-    //     fetch('https://api.themoviedb.org/3/discover/movie?api_key=b3eddc3e1c353736590c8f4251c8afca')
-    //         .then(res => res.json())
-    //         .then(response => this.setState({
-    //             movies: response.results
-    //         }));
-    // }
 
     getAllMovies(page) {
         fetch(`https://api.themoviedb.org/3/discover/movie?api_key=b3eddc3e1c353736590c8f4251c8afca&page=${page}`)
@@ -63,8 +56,8 @@ export default class HomePage extends Component {
                             </Pagination.Item>
                         );
                     })}
-                    <Pagination.Next onClick={() => this.handlePageChange(activePage + 1)} disabled={activePage === this.state.totalPages} />
-                    <Pagination.Last onClick={() => this.handlePageChange(this.state.totalPages)} />
+                    <Pagination.Next onClick={() => this.handlePageChange(activePage + 1)} disabled={activePage === totalPages} />
+                    <Pagination.Last onClick={() => this.handlePageChange(totalPages)} />
                 </Pagination>
                 <Row>
                     <Col>

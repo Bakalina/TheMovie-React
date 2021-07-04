@@ -9,45 +9,34 @@ export default class HomePage extends Component {
         super(props);
         this.state = {
             movies: [],
-            valBtn: 1
+            activePage: 0,
+            totalPages: 0
         };
     }
 
-
-    getMovies = () => {
-        fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=b3eddc3e1c353736590c8f4251c8afca&page=${this.state.valBtn}`)
+    getAllMovies(page) {
+        fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=b3eddc3e1c353736590c8f4251c8afca&page=${page}`)
             .then(res => res.json())
-            .then(response => this.setState({
-                movies: response.results
+            .then(({ results, page, total_pages }) => this.setState({
+                movies: results,
+                activePage: page,
+                totalPages: total_pages
             }));
     }
 
-
     componentDidMount() {
-        this.getMovies()
+        this.getAllMovies(1);
     }
 
-
-    componentDidUpdate() {
-        this.getMovies()
-    }
-
-    clickPage = (e) => {
-        this.setState({valBtn: e.target.value})
-    }
 
 
 
     render() {
         return (
             <Container>
+                <PaginationPage activePage={this.state.activePage} totalPages={this.state.totalPages}/>
                 <Row>
                     <Col>
-                        <button value='1' onClick={e => this.clickPage(e)}>1</button>
-                        <button value='2' onClick={e => this.clickPage(e)}>2</button>
-                        <button value='3' onClick={e => this.clickPage(e)}>3</button>
-                        <button value='4' onClick={e => this.clickPage(e)}>4</button>
-                        <button value='5' onClick={e => this.clickPage(e)}>5</button>
                         <Movies data={this.state.movies}/>
                     </Col>
                 </Row>
