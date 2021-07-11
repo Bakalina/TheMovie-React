@@ -2,6 +2,9 @@ import React, {Component} from 'react'
 import {Container, Row, Col, Pagination} from 'react-bootstrap';
 import {Movies} from '../components/Movies';
 import PaginationPage from "../Pagination/Pagination";
+import ReactPaginate from 'react-paginate';
+
+
 
 
 export default class HomePage extends Component {
@@ -39,29 +42,25 @@ export default class HomePage extends Component {
         const { activePage, totalPages } = this.state;
         return (
             <Container>
-                <Pagination className="justify-content-center">
-                    <Pagination.First onClick={() => this.handlePageChange(1)} />
-                    <Pagination.Prev onClick={() => this.handlePageChange(activePage - 1)} disabled={activePage === 1} />
-                    {Array(9).fill(0).map((item, index) => {
-                        if (activePage && (activePage > totalPages - 8)) {
-                            return (
-                                <Pagination.Item
-                                    onClick={() => this.handlePageChange(totalPages - 8 + index)}
-                                    active={activePage === totalPages - 8 + index}
-                                >
-                                    {totalPages - 8 + index}
-                                </Pagination.Item>
-                            );
-                        }
-                        return (
-                            <Pagination.Item onClick={() => this.handlePageChange(activePage + index)} active={activePage === activePage + index}>
-                                {activePage + index}
-                            </Pagination.Item>
-                        );
-                    })}
-                    <Pagination.Next onClick={() => this.handlePageChange(activePage + 1)} disabled={activePage === totalPages} />
-                    <Pagination.Last onClick={() => this.handlePageChange(totalPages)} />
-                </Pagination>
+                <ReactPaginate
+                    pageCount={totalPages}
+                    pageRangeDisplayed={5}
+                    marginPagesDisplayed={2}
+                    onPageChange={this.handlePageChange}
+                    containerClassName="pagination justify-content-center"
+                    pageClassName="page-item"
+                    pageLinkClassName="page-link"
+                    breakClassName="page-item"
+                    breakLinkClassName="page-link"
+                    nextLabel="›"
+                    previousLabel="‹"
+                    nextClassName="page-item"
+                    nextLinkClassName="page-link"
+                    previousClassName="page-item"
+                    previousLinkClassName="page-link"
+                    activeClassName="active"
+                    initialPage={0}
+                />
                 <Row>
                     <Col>
                         <Movies data={this.state.movies}/>
