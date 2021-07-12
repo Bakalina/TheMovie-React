@@ -1,25 +1,24 @@
 import React, {Component} from 'react'
-import {Container, Row, Col, Pagination} from 'react-bootstrap';
+import {Container, Row, Col} from 'react-bootstrap';
 import {Movies} from '../components/Movies';
-import PaginationPage from "../Pagination/Pagination";
 import ReactPaginate from 'react-paginate';
 
 
 
-
-export default class HomePage extends Component {
+export default class PopularPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
             movies: [],
-            activePage: 0,
-            totalPages: 0
+            totalPages: 0,
+            isModalOpened: false
         };
     }
 
 
-    getAllMovies(page) {
-        fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=b3eddc3e1c353736590c8f4251c8afca&page=${page}`)
+    getMovies(page='') {
+
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=b3eddc3e1c353736590c8f4251c8afca&page=${page}`)
             .then(res => res.json())
             .then(({ results, page, total_pages }) => this.setState({
                 movies: results,
@@ -28,22 +27,21 @@ export default class HomePage extends Component {
             }));
     }
 
-    componentDidMount() {
-        this.getAllMovies(1);
+    handlePageChange = ({ selected }) => {
+        this.getMovies(selected + 1);
     }
-
-    handlePageChange(page) {
-        this.getAllMovies(page);
-    }
-
 
 
     render() {
-        const { activePage, totalPages } = this.state;
         return (
             <Container>
+                <Row>
+                    <Col>
+                        <Movies data={this.state.movies}/>
+                    </Col>
+                </Row>
                 <ReactPaginate
-                    pageCount={totalPages}
+                    pageCount={this.state.totalPages}
                     pageRangeDisplayed={5}
                     marginPagesDisplayed={2}
                     onPageChange={this.handlePageChange}
@@ -61,11 +59,6 @@ export default class HomePage extends Component {
                     activeClassName="active"
                     initialPage={0}
                 />
-                <Row>
-                    <Col>
-                        <Movies data={this.state.movies}/>
-                    </Col>
-                </Row>
             </Container>
         )
     }
