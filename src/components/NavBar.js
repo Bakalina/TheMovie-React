@@ -15,6 +15,9 @@ function NavBar() {
                        <Nav.Item as='li'>
                            <Nav.Link as={NavLink} activeClassName="active" to="/popular">Popular</Nav.Link>
                        </Nav.Item>
+                       <Nav.Item as='li'>
+                           <Nav.Link as={NavLink} activeClassName="active" to="/expected">Expected</Nav.Link>
+                       </Nav.Item>
                    </Nav>
                </Col>
            </Row>
