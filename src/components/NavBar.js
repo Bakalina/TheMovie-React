@@ -1,6 +1,7 @@
 import React from "react";
 import {Col, Container, Nav, Row} from "react-bootstrap";
 import {NavLink} from "react-router-dom";
+import NowPlaying from "../pages/NowPlaying";
 
 
 function NavBar() {
@@ -17,6 +18,9 @@ function NavBar() {
                        </Nav.Item>
                        <Nav.Item as='li'>
                            <Nav.Link as={NavLink} activeClassName="active" to="/expected">Expected</Nav.Link>
+                       </Nav.Item>
+                       <Nav.Item as='li'>
+                           <Nav.Link as={NavLink} activeClassName="active" to="/now_playing">NowPlaying</Nav.Link>
                        </Nav.Item>
                    </Nav>
                </Col>

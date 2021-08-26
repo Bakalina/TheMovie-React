@@ -4,6 +4,7 @@ import {Route, Switch} from "react-router-dom";
 import NavBar from "./components/NavBar";
 import FilmPage from "./pages/FilmPage";
 import Expected from "./pages/Expected";
+import NowPlaying from "./pages/NowPlaying";
 
 function App() {
     return (
@@ -11,6 +12,9 @@ function App() {
             <NavBar/>
             <Switch>
                 <Route path='/films/:id' component={FilmPage}/>
+                <Route path='/now_playing'>
+                    <NowPlaying/>
+                </Route>
                 <Route path='/expected'>
                     <Expected/>
                 </Route>
