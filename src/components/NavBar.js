@@ -1,7 +1,6 @@
 import React from "react";
 import {Col, Container, Nav, Row} from "react-bootstrap";
 import {NavLink} from "react-router-dom";
-import NowPlaying from "../pages/NowPlaying";
 
 
 function NavBar() {
