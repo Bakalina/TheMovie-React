@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import {Container} from 'react-bootstrap';
-import {Movies} from '../components/Movies';
+import Movies from '../components/Movies';
 import Pagination from "../components/Pagination";
 
 

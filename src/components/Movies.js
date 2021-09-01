@@ -1,11 +1,11 @@
 import React from 'react'
-import { Card, CardColumns } from 'react-bootstrap';
+import { Card, Row } from 'react-bootstrap';
 import Rating from './Rating/Rating';
 import {Link} from "react-router-dom";
 
-export const Movies = ({ data }) => {
+export default function Movies ({ data }) {
     const moviesList = data.map(movie => (
-        <Card key={movie.id} >
+        <Card key={movie.id} style={{ width: '12rem', margin: '5px' }}>
             <Card.Img variant="top" src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${movie.poster_path}`}></Card.Img>
             <Rating rate={movie.vote_average * 10} />
             <Card.Body>
@@ -16,6 +16,6 @@ export const Movies = ({ data }) => {
     ));
 
     return (
-        <CardColumns>{moviesList}</CardColumns>
+        <Row>{moviesList}</Row>
     )
 }
