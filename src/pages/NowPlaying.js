@@ -9,7 +9,7 @@ export default function NowPlaying() {
     const [totalPages, setTotalPages] = useState(0);
 
     function getMovies(page = '') {
-        fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=b3eddc3e1c353736590c8f4251c8afca&page=${page}`)
+        fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=b3eddc3e1c353736590c8f4251c8afca&language=ru-RU&page=${page}`)
             .then(res => res.json())
             .then(({results, total_pages}) => {
                 setMovies(results);
