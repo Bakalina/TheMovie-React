@@ -6,12 +6,12 @@ export default function FilmPage (props) {
     const [movie, setMovie] = useState({})
 
     useEffect(() => {
-            fetch(`https://api.themoviedb.org/3/movie/${props.match.params.id}?api_key=b3eddc3e1c353736590c8f4251c8afca`)
+            fetch(`https://api.themoviedb.org/3/movie/${props.match.params.id}?api_key=b3eddc3e1c353736590c8f4251c8afca&language=ru-RU`)
                 .then(res => res.json())
                 .then(response => setMovie(response))
-        },[])
-
-    const {poster_path, title, overview, runtime, release_date} = movie
+        })
+    console.log(movie)
+    const {poster_path, title, overview, release_date, tagline} = movie
 
     return (
         <Container>
@@ -22,9 +22,9 @@ export default function FilmPage (props) {
                 </Col>
                 <Col sm={8}>
                     <h2>{title}</h2>
-                    <p><b>Release: </b>{release_date}</p>
-                    <p><b>Overview: </b>{overview}</p>
-                    <p><b>Runtime: </b>{runtime} min</p>
+                    <p>{release_date}</p>
+                    <p>{tagline}</p>
+                    <p><b>Обзор: </b>{overview}</p>
                 </Col>
             </Row>
         </Container>

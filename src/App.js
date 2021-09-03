@@ -8,7 +8,7 @@ import NowPlaying from "./pages/NowPlaying";
 
 function App() {
     return (
-        <div>
+        <div style={{background: "#FAF9F6"}}>
             <NavBar/>
             <Switch>
                 <Route path='/films/:id' component={FilmPage}/>
