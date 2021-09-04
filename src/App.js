@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar";
 import FilmPage from "./pages/FilmPage";
 import Expected from "./pages/Expected";
 import NowPlaying from "./pages/NowPlaying";
+import People from "./people/People";
 
 function App() {
     return (
@@ -12,6 +13,9 @@ function App() {
             <NavBar/>
             <Switch>
                 <Route path='/films/:id' component={FilmPage}/>
+                <Route path='/people'>
+                    <People/>
+                </Route>
                 <Route path='/now_playing'>
                     <NowPlaying/>
                 </Route>

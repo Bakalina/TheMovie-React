@@ -10,7 +10,6 @@ export default function FilmPage (props) {
                 .then(res => res.json())
                 .then(response => setMovie(response))
         })
-    console.log(movie)
     const {poster_path, title, overview, release_date, tagline} = movie
 
     return (
