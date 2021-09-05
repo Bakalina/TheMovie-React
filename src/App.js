@@ -7,7 +7,8 @@ import Expected from "./pages/Expected";
 import NowPlaying from "./pages/NowPlaying";
 import People from "./people/People";
 
-function App() {
+
+export default  function App() {
     return (
         <div style={{background: "#FAF9F6"}}>
             <NavBar/>
@@ -32,5 +33,3 @@ function App() {
         </div>
     )
 }
-
-export default App;

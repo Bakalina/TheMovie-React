@@ -28,5 +28,4 @@ export default function FilmPage (props) {
             </Row>
         </Container>
     )
-
 }

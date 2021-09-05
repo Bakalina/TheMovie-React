@@ -3,7 +3,6 @@ import Pagination from "../components/Pagination";
 import {Card, Container, Row} from "react-bootstrap";
 
 
-
 export default function People() {
     const [people, setPeople] = useState([]);
     const [totalPages, setTotalPages] = useState(0);
@@ -22,7 +21,7 @@ export default function People() {
             <Card.Img variant="top" src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${person.profile_path}`}></Card.Img>
             <Card.Body>
                 <Card.Title>{person.name}</Card.Title>
-                <Card.Text>{person.known_for.map(el => `${(el.name)!==undefined?el.name:el.title}. `)}</Card.Text>
+                <Card.Text>{person.known_for.map(el => `"${(el.name)!==undefined?el.name:el.title}" `)}</Card.Text>
             </Card.Body>
         </Card>
     ));

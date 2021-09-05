@@ -3,6 +3,7 @@ import { Card, Row } from 'react-bootstrap';
 import Rating from './Rating/Rating';
 import {Link} from "react-router-dom";
 
+
 export default function Movies ({ data }) {
     const moviesList = data.map(movie => (
         <Card key={movie.id} style={{ width: '13.6rem', margin: '5px' }} border="light">
