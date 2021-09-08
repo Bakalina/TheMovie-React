@@ -3,14 +3,14 @@ import {Container, Row, Col} from "react-bootstrap";
 
 
 export default function FilmPage (props) {
-    const [movie, setMovie] = useState({})
-
+    const [movie, setMovie] = useState([])
+    console.log(movie)
     useEffect(() => {
             fetch(`https://api.themoviedb.org/3/movie/${props.match.params.id}?api_key=b3eddc3e1c353736590c8f4251c8afca&language=ru-RU`)
                 .then(res => res.json())
                 .then(response => setMovie(response))
-        })
-    const {poster_path, title, overview, release_date, tagline} = movie
+        },[])
+    const {poster_path, title, overview, release_date, tagline, backdrop_path} = movie
 
     return (
         <Container>

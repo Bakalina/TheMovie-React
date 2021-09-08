@@ -1,0 +1,22 @@
+.fot {
+    background: #020255;
+    height: 14rem;
+}
+
+h6 {
+    padding-top: 4rem;
+    color: white;
+    text-transform: uppercase;
+}
+
+.fot a, .fot a:hover {
+    text-decoration: none;
+    color: white;
+    font-size: 0.8rem;
+    display: block;
+}
+
+.logo {
+    width: 8rem;
+    margin-top: 2rem;
+}

@@ -6,6 +6,7 @@ import FilmPage from "./pages/FilmPage";
 import Expected from "./pages/Expected";
 import NowPlaying from "./pages/NowPlaying";
 import People from "./people/People";
+import Footer from "./components/Footer";
 
 
 export default  function App() {
@@ -30,6 +31,7 @@ export default  function App() {
                     <HomePage/>;
                 </Route>
             </Switch>
+            <Footer/>
         </div>
     )
 }
