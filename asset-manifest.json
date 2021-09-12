@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/TheMovie-React/static/css/main.a41dec9d.chunk.css",
+    "main.js": "/TheMovie-React/static/js/main.e4734713.chunk.js",
+    "main.js.map": "/TheMovie-React/static/js/main.e4734713.chunk.js.map",
+    "runtime-main.js": "/TheMovie-React/static/js/runtime-main.d15d44ed.js",
+    "runtime-main.js.map": "/TheMovie-React/static/js/runtime-main.d15d44ed.js.map",
+    "static/css/2.081f420c.chunk.css": "/TheMovie-React/static/css/2.081f420c.chunk.css",
+    "static/js/2.f2fa361c.chunk.js": "/TheMovie-React/static/js/2.f2fa361c.chunk.js",
+    "static/js/2.f2fa361c.chunk.js.map": "/TheMovie-React/static/js/2.f2fa361c.chunk.js.map",
+    "index.html": "/TheMovie-React/index.html",
+    "static/css/2.081f420c.chunk.css.map": "/TheMovie-React/static/css/2.081f420c.chunk.css.map",
+    "static/css/main.a41dec9d.chunk.css.map": "/TheMovie-React/static/css/main.a41dec9d.chunk.css.map",
+    "static/js/2.f2fa361c.chunk.js.LICENSE.txt": "/TheMovie-React/static/js/2.f2fa361c.chunk.js.LICENSE.txt",
+    "static/media/logo.bf7f470b.svg": "/TheMovie-React/static/media/logo.bf7f470b.svg",
+    "static/media/logoFooter.de1a664e.svg": "/TheMovie-React/static/media/logoFooter.de1a664e.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d15d44ed.js",
+    "static/css/2.081f420c.chunk.css",
+    "static/js/2.f2fa361c.chunk.js",
+    "static/css/main.a41dec9d.chunk.css",
+    "static/js/main.e4734713.chunk.js"
+  ]
+}
